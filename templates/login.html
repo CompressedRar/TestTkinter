@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Nunito:wght@300&family=Outfit:wght@300&display=swap" rel="stylesheet">
         <style>
             body {
                 display: flex;
-                
+                font-family: 'Outfit';
+                font-weight: 100;
             }
             .logo-container {
                 background-color: red;
@@ -24,7 +28,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                background-color: grey;
+                background-color: white;
+                height: 70%;
                 width: 50%;
                 padding: 4%;
             }
@@ -38,25 +43,30 @@
             }
             
             .login-container__form input[type="text"], .login-container__form input[type="password"]{
+                font-family: 'Outfit';
                 width: 80%;
                 height: 20%;
                 padding: 3%;
                 font-size: 15px;
-                border-style: none;
+                border-style: solid;
+                border-width: 1px;
                 border-radius: 10pt;
+                border-color: grey;
             }
             .login-container__form input[type="submit"] {
+                font-family: 'Nunito';
                 width: 60%;
-                height: 40%;
-                font-size: 1vw;
+                height: 35%;
+                font-size: 0.8vw;
                 padding: 4%;
                 text-align: center;
-                border-style: none;
+                border-style: solid;
+                border-width: 1px;
                 border-radius: 5pt;
-                margin-top: 5%;
+                border-color: grey;
             }
             .login-container__contents h1 {
-                margin-bottom: 20%;
+                margin-bottom: 35%;
                 font-size: 40px;
             }
         </style>
