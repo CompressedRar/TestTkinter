@@ -2,14 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Welcome</title>
 
 </head>
 <body>
-    <h1>Hello ebriwan</h1>
-    {% for i in content%}
-        <p>{{i}}</p>
-    {% endfor %}
-
+    <div class = "nav-bar">
+        <div class = "logo-div">
+            <img src="{{ url_for('static', filename='styles/logo.png') }}"/>
+        </div>
+        <div class = "login-div">
+            <button id = "signup">Sign Up</button>
+            <button id = "login">Log In</button>
+        </div>
+    </div>
+    
+    <div class = "heading-title"> 
+        <h1>
+            Atomic Odyssey
+        </h1>
+    </div>
 </body>
 </html>
