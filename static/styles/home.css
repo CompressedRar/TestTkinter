@@ -4,6 +4,7 @@ body {
     font-family: 'Quicksand';
     color: silver;
     margin: 0;
+    overflow-x: hidden;
 }
 .background-container {
     width: 100vw;
@@ -36,6 +37,7 @@ body {
     justify-content: center;
 }
 .login-div button {
+    transition: 0.2s;
     font-family: 'Quicksand';
     background-color: #31CF0B;
     border-style: none;
@@ -47,7 +49,14 @@ body {
     font-weight: bold;
     box-shadow: 0px 5px #229207;
 }
+#login:hover{
+    background-color: #31ac0B;
+}
 
+#login:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px #229207;
+}
 #signup {
     background-color: #1B4666;
     border-style: solid;
@@ -55,16 +64,79 @@ body {
     border-color: #143248;
     box-shadow: 0px 5px #143248;
 }
+#login:hover{
+    background-color: #31ac0B;
+}
+
+#login:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px #229207;
+}
 .main-content{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .heading-title {
-    background-color: #143248;
-    height: 20vh;
-    width: 80vw;
-    margin-top: 5vh;
+    opacity: 1;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    height: 90vh;
+    width: 95vw;
+    
 }
 
+.heading-title img {
+    width: 90vw;
+    align-self: center;
+    
+}
 
+.main-desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    font-size: 5vw;
+    width: 90vw;
+}
+.main-desc hr {
+    width: 90vw;
+    background-color: white;
+    border-radius: 1px;
+    height: 2px;
+    margin: -5%;
+}
+
+.main-desc h4 {
+    align-self: center;
+    text-align: center;
+}
+
+.main-desc button {
+    transition: 0.2s;
+    font-family: 'Quicksand';
+    background-color: #31CF0B;
+    border-style: none;
+    border-radius: 6vh;
+    height: 10vh;
+    width: 40vw;
+    margin: 5%;
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    box-shadow: 0px 10px #229207;
+}
+.main-desc button:hover{
+    background-color: #31ac0B;
+}
+
+.main-desc button:active {
+    transform: translateY(10px);
+    box-shadow: 0px 0px #229207;
+}
