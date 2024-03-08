@@ -96,7 +96,14 @@ body {
     align-self: center;
     
 }
-
+.heading-title h1 {
+    align-self: center;
+    font-size: 12vw;
+    margin: -1%;
+    background: -webkit-linear-gradient(darkgreen, lightgreen);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .main-desc{
     display: flex;
     justify-content: center;
