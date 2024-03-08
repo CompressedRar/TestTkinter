@@ -1,4 +1,6 @@
-console.log("Hehe");    
+let mode = document.getElementById("mode");
+console.log(mode.value);    
+
 
 toggleLogin = document.getElementById("login-account_label");
 toggleSignin = document.getElementById("create-account__label");
@@ -23,6 +25,17 @@ function signinSendToBack(){
     signform.style.zIndex = "0";
 }
 
+window.addEventListener("load", (event)=>{
+    
+    console.log(mode.value === "true");
+
+    if(!mode.value){
+        loginSendToBack();
+        loginform.style.opacity = "0";
+        signform.style.opacity = "1";
+        isSignInOpen = true;
+    }
+});
 
 toggleSignin.addEventListener("click", ()=>{
     loginform.style.opacity = "0";

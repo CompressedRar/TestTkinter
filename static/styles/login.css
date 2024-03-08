@@ -157,3 +157,16 @@ body {
     border-radius: 5pt;
     margin-bottom: -5%;
 }
+
+.signin-msg{
+    font-family: 'Outfit';
+    width: 80%;
+    padding: 3%;
+    font-size: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10pt;
+    background-color: #ff8ba3;
+    border-color: #e94048;
+    color: white;
+}
