@@ -23,7 +23,7 @@
         </div>
     </div>
     
-    <main class="main-content">
+    <main class="main-content"> 
         <div class = "heading-title"> 
             <img src="{{ url_for('static', filename='styles/title.png') }}">
         </div>
@@ -32,7 +32,10 @@
             <h4>
                 Let us discover the world of elements through fun.
             </h4>
-            <button>Get Started</button>
+            
+            <form action = "login" >
+                <input type="submit" value = "Get Started">
+            </form>
         </div>
     </main>
     
