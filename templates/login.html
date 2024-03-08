@@ -14,8 +14,8 @@
         <div class = "logo-container">
             <img id = "logo-container__img"/>
         </div>
-        <div class = "login-container">
-            <div class = "login-container__contents">
+        <div class = "login-container" >
+            <div class = "login-container__contents" id = "login-form">
                 <h1>Login to</h1>
                 <h2>Atomic Odyssey</h2>
                 <form class = "login-container__form" method = "post">
@@ -24,12 +24,12 @@
                     <input type="submit" value="Login">
                 </form>
                 <p>
-                    Don;t have an account?
-                    <label>Create one here.</label>
+                    Don't have an account?
+                    <label id = "create-account__label">Create one here.</label>
                 </p>
             </div>            
         </div>
-        <div class = "signup-container">
+        <div class = "signup-container" id = "signin-form">
             
             <form class = "signup-container__form" method = "post">
                 <h1>Create account to use for signing in.</h1>  
@@ -39,7 +39,7 @@
                 <input type="submit" value="Create">
                 <p>
                     Already have an account?
-                    <label>Login here.</label>
+                    <label id = "login-account_label">Login here.</label>
                 </p>
             </form>
 
