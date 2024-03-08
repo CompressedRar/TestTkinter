@@ -11,6 +11,10 @@
         </style>
     </head>
     <body>
+        <div id = "bg-div" class = "background-container"> 
+            <img src="{{url_for('static', filename= 'styles/background.png')}}">
+        </div>
+        
         <input id = "mode" value = {{model}} hidden="true"> 
         <iframe name = "dummy" id = "dummy" style="display:none"></iframe>
         <div class = "logo-container">
