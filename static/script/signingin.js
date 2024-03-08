@@ -29,7 +29,7 @@ window.addEventListener("load", (event)=>{
     
     console.log(mode.value === "true");
 
-    if(!mode.value){
+    if(mode.value ==="false"){
         loginSendToBack();
         loginform.style.opacity = "0";
         signform.style.opacity = "1";
