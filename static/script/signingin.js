@@ -40,7 +40,7 @@ window.addEventListener("load", (event)=>{
 toggleSignin.addEventListener("click", ()=>{
     loginform.style.opacity = "0";
     signform.style.opacity = "1";
-    document.getElementById("bg-div").style.filter = "blur(5px)";
+    document.getElementById("bg-div").style.filter = "blur(7px)";
     isSignInOpen = true;
 });
 
@@ -56,6 +56,6 @@ loginform.addEventListener("transitionend", ()=>{
 toggleLogin.addEventListener("click", ()=>{
     signform.style.opacity = "0";
     loginform.style.opacity = "1";
-    document.getElementById("bg-div").style.filter = "blur(0px)"; 
+    document.getElementById("bg-div").style.filter = "blur(5px)"; 
     isSignInOpen = false;
 });
