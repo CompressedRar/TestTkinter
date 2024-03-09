@@ -52,5 +52,10 @@ def login():
 def lobby(user):
     return render_template("lobby.html")
 
+@app.route("/logout")
+def logout():
+    session.pop()
+    return render_template("index.html")
+
 if __name__ == "__main__":
     app.run()
