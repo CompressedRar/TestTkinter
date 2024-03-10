@@ -9,7 +9,11 @@ def home():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    
+    #checks if user is already in session    
+    #if not, authenticate
+    if "currentuser" in session:
+                return redirect(url_for("lobby", user = "HEHE"))
+
     if request.method == "POST":
         mode = request.form["mode"]
         
@@ -18,15 +22,12 @@ def login():
         if mode == "login":
             username = request.form["login-username"]
             password = request.form["login-password"]
-
-            #checks if user is already in session    
-            #if not, authenticate
-            if "currentuser" in session:
-                return redirect(url_for("lobby", user = "HEHE"))
-
+            
             if username == "hehe" and password == "hehe":
                 flash("Login successful", "info")
                 session["currentuser"] = "HEHE"
+
+                #redirect  to lobby page
                 return redirect(url_for("lobby", user = "HEHE"))
             else: 
                 return f"Invalid account"
@@ -54,8 +55,9 @@ def lobby(user):
 
 @app.route("/logout")
 def logout():
-    session.pop()
-    return render_template("index.html")
+
+    session.pop("currentuser", None)
+    return redirect(url_for("login", model = "false"))
 
 if __name__ == "__main__":
     app.run()
