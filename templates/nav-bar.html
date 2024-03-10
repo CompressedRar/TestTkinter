@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/lobby.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Nunito:wght@300&family=Outfit:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <title>{% block title %}{% endblock %}</title>        
+    </head>
+    <body>
+        <nav class= "navigation">
+            
+            <div class = "main-nav">
+                <img id = "profile-pic" src = "{{url_for('static', filename='styles/logo.png')}}">
+                <a>Home</a>
+                <a>Levels</a>
+                <a>Profile</a>
+                <a>Settings</a>
+                <a>Logout</a>
+            </div>
+            
+        </nav>
+        {% block content%}
+
+        {% endblock %}
+    </body>
+</html>
