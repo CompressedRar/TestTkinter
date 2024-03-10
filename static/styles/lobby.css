@@ -1,12 +1,13 @@
 body {
     margin: 0;
-    padding-top: 5%;
+    padding-top: 10%;
     display: flex;
     font-family: 'Outfit';
     font-weight: 100;
     color: white;
     flex-direction: column;
-    background-color: #143248;
+    background-color: #0f1e29;
+    
 }
 .navigation {
 
@@ -20,6 +21,7 @@ body {
     width: 100vw;
     height: 10vh;
     background-color: #164464;
+    box-shadow:0px 0px 30px #143248;
 
 }
 .navigation .main-nav {
@@ -38,4 +40,71 @@ body {
 .navigation img {
     width: 50px;
     margin-left: -5%;
+}
+.table-of-element {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.table-of-element tr {
+    display: flex;
+    justify-content: space-around;
+}
+
+.table-of-element th {
+    background-color: green;
+    width: 5vw;
+    height: 13vh;
+    display: none;
+}
+.table-of-element td {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    background-color: #0f1e29;
+    border-style: solid;
+    border-color: green;
+    border-width: 2px;
+    border-radius: 7px;
+    justify-content: center;
+}
+.table-of-element .atomic-details {
+    display: flex;
+    padding-left: 10px;
+    width: 5vw;
+    height: 2vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-of-element .atomic-details p {
+    width: 50%;
+}
+.table-of-element .symbol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    height: 7vh;
+}
+.element .type p {
+    font-size: 10px;
+    text-align: center;
+}
+.table-of-element .blank {
+    
+    color: #0f1e29;
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    background-color: #0f1e29;
+    border-style: solid;
+    border-color: #0f1e29;
+    border-width: 2px;
+    border-radius: 7px;
+    justify-content: center;   
 }
