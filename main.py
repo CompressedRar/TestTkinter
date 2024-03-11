@@ -51,7 +51,9 @@ def login():
 
 @app.route("/<user>")
 def lobby(user):
-    return render_template("lobby.html")
+    if "currentuser" in session:
+        return render_template("lobby.html")     
+    return redirect(url_for("login"))
 
 @app.route("/logout")
 def logout():
