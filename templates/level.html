@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/level.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Nunito:wght@300&family=Outfit:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class = "top-container">
+            <div class = "close-container">
+                <a style="color: white;">&#10005;</a>
+            </div>
+            <div class = "progress-container">
+                <div class="progress-bar">
+                    a
+                </div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">
+                <div class="question-main">
+                    <p>What is the element of this symbol?</p>
+                </div>
+                <div class="question-object">
+                    <h1>H</h1>
+                </div>
+            </div>
+
+            <div class="answer">
+                <form>
+                    
+                    <div class="choices" id = "first">
+                        <input type="radio" id = "1" name = "choice" value="Hello">
+                        <label for="1">Choice 1</label>
+                    </div>
+                    <div class="choices" id = "second">
+                        <input type="radio" id = "2" name = "choice" value="Hello">
+                        <label for="2">Choice 2</label>
+                    </div>
+                    <div class="choices" id = "third">
+                        <input type="radio" id = "3" name = "choice" value="Hello">
+                        <label for="3">Choice 3</label>
+                    </div>
+                    <div class="choices" id = "fourth">
+                        <input type="radio" id = "4" name = "choice" value="Hello">
+                        <label for="4">Choice 4</label>
+                    </div>
+                    <input type="submit">   
+                </form>
+            </div>
+        </div>
+
+    </body>
+</html>

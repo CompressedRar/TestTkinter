@@ -61,5 +61,9 @@ def logout():
     session.pop("currentuser", None)
     return redirect(url_for("login", model = "false"))
 
+@app.route("/level")
+def level():
+    return render_template("level.html") 
+
 if __name__ == "__main__":
     app.run()
