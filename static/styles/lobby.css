@@ -58,6 +58,7 @@ body {
     display: none;
 }
 .table-of-element td {
+    margin: 1px;
     text-wrap: wrap;
     display: flex;
     flex-direction: row;
@@ -107,4 +108,18 @@ body {
     border-width: 2px;
     border-radius: 7px;
     justify-content: center;   
+}
+
+.table-of-element .akali-metal {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    background-color: #0f1e29;
+    border-style: solid;
+    border-color: orangered;
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
 }
