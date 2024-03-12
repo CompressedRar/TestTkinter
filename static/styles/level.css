@@ -23,7 +23,19 @@ body{
     display: flex;
     align-items: center;
 }
+@keyframes progress {
+    from {
+        width:0%;
+    }
+    to {
+        width: 100%;
+    }
+}
 .top-container .progress-bar{
+    
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transition: 0.5s;
     width: 100%;
     margin: 1%;
     height: 4vh;
@@ -108,17 +120,26 @@ body{
 
 .question-container .answer .choices label {
     width: 100%;
+    transition: 0.5s;
     height: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #0f1e29;
+    border-color: #2c7e18;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
 }
 .question-container .answer .choices input[type="radio"]{
     display: none;
     
 }
-
+.question-container .answer .choices input[type="radio"]:checked + label{
+    border-color: #31CF0B;
+    font-weight: bold;
+}
 .question-container .answer input[type="submit"]{
     background-color: #31CF0B;
     height: 10vh;   
@@ -137,8 +158,8 @@ body{
 .question-container .answer input[type="submit"]:active{
     background-color: #31CF0B;
     height: 10vh;   
-    width: 28vw;
-    margin: 1%;
+    width: 27vw;
+    margin: 4%;
     margin-top: 5%;
     border-style: none;
     font-size:25px;

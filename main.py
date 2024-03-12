@@ -1,10 +1,42 @@
 from flask import *
 from datetime import *
+from flask_sqlalchemy import *
+import os
 app = Flask(__name__)
 app.secret_key = "hehe"
 app.permanent_session_lifetime = timedelta(minutes=30)
+
+#models
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Users.sqlite3'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class Students(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    confirmpassword = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return {
+             "firstname": firstname,
+             "password": password}
+
+#views
+    
+@app.before_request
+def create_tables():
+     db.create_all()
+
 @app.route("/")
 def home():
+    newacc = Students(id = 1, firstname="testuser", password="testpass", confirmpassword="testpass")
+
+    db.session.add(newacc)
+    db.session.commit()
+    
     return render_template("index.html")
 
 @app.route("/login", methods=["GET", "POST"])
@@ -65,5 +97,7 @@ def logout():
 def level():
     return render_template("level.html") 
 
+
 if __name__ == "__main__":
+    
     app.run()
