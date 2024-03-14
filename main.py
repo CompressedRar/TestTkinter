@@ -21,8 +21,8 @@ class Students(db.Model):
 
     def __repr__(self):
         return {
-             "firstname": firstname,
-             "password": password}
+             "firstname": self.firstname,
+             "password": self.password}
 
 #views
     
@@ -32,7 +32,7 @@ def create_tables():
 
 @app.route("/")
 def home():
-    newacc = Students(id = 1, firstname="testuser", password="testpass", confirmpassword="testpass")
+    newacc = Students(firstname="testuser", password="testpass", confirmpassword="testpass")
 
     db.session.add(newacc)
     db.session.commit()
@@ -62,19 +62,15 @@ def login():
                 #redirect  to lobby page
                 return redirect(url_for("lobby", user = "HEHE"))
             else: 
-                return f"Invalid account"
+                flash("The account doesn't exists!", "info")
+                return render_template("login.html", model = "true")
             
         elif mode == "signin":
             #signup
             #checks if passwords match
             password = request.form["signup-password"]
             confirmpassword = request.form["signup-confirmpassword"]
-            
-
-            if password != confirmpassword:
-                flash("The passwords don't match!", "info")
-                return render_template("login.html", model = "false")
-
+            #ayusing sa javascript yung textchanged event
 
 
             
