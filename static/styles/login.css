@@ -169,6 +169,7 @@ body {
     color: silver;
 }
 .signup-container__form input[type="submit"] {
+    transition: 0.5s;
     background-color: #31CF0B;
     color: white;
     font-weight: bold;
@@ -177,11 +178,14 @@ body {
     font-size: 1.3vw;
     padding: 4%;
     text-align: center;
-    border-width: 0px;
+    border-width: 0px; 
     border-radius: 5pt;
     margin-bottom: -5%;
 }
 
+.signup-container__form input[type="submit"]:disabled {
+    background-color: #27511d;
+}
 .signin-msg{
     margin-bottom: 30px;
     display: flex;

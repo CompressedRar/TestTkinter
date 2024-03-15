@@ -48,14 +48,14 @@
         </div>
         <div class = "signup-container" id = "signin-form">
             
-            <form action = "#" class = "signup-container__form" method = "post">
+            <form action = "#" class = "signup-container__form" method = "post" >
                 <h1>Create account to use for signing in.</h1>
                 
                 <input type = "text" name = "mode" hidden="true" value="signin">  
                 <input type = "text" name = "signup-username" placeholder="Username" required>
-                <input type = "password" name = "signup-password" placeholder="Password" required>
-                <input type = "password" name = "signup-confirmpassword" placeholder="Confirm Password" required>
-                <input type="submit" value="Create">
+                <input type = "password" id = "firstpass" name = "signup-password" placeholder="Password" required>
+                <input type = "password" id = "secondpass" name = "signup-confirmpassword" placeholder="Confirm Password" required>
+                <input type="submit" id="sign-btn" value="Create" disabled>
                 <p>
                     Already have an account?
                     <label id = "login-account_label">Login here.</label>

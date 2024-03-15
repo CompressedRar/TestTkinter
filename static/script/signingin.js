@@ -5,6 +5,11 @@ console.log(mode.value);
 toggleLogin = document.getElementById("login-account_label");
 toggleSignin = document.getElementById("create-account__label");
 
+passwordinput = document.getElementById("firstpass");
+confirmpasswordinput = document.getElementById("secondpass");
+
+buttonsign= document.getElementById("sign-btn");
+
 signform = document.getElementById("signin-form");
 loginform = document.getElementById("login-form");
 
@@ -24,6 +29,23 @@ function signinBringToFront(){
 function signinSendToBack(){
     signform.style.zIndex = "0";
 }
+
+confirmpasswordinput.addEventListener("keyup", ()=>{
+    
+    if (!(passwordinput.value == confirmpasswordinput.value)) {
+        passwordinput.style.borderColor = "red";
+        confirmpasswordinput.style.borderColor = "red";
+        console.log(passwordinput.value);
+        buttonsign.disabled = true;
+        
+    }
+    else {
+        passwordinput.style.borderColor = "green";
+        confirmpasswordinput.style.borderColor = "green";
+        buttonsign.disabled = false;
+        
+    }
+});
 
 window.addEventListener("load", (event)=>{
     
