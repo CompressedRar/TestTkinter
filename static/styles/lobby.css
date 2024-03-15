@@ -10,7 +10,6 @@ body {
     
 }
 .navigation {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -41,10 +40,25 @@ body {
     width: 50px;
     margin-left: -5%;
 }
+.navigation .profile-bar {
+    margin-left: 50%;
+    width: 10%;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation .profile-bar .profile-image-container{
+    background-color: white;
+    width: 30%;
+    height: 60%;
+    border-radius: 50%;
+}
 .table-of-element {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin-bottom: 20vh;
 }
 .table-of-element tr {
     display: flex;
@@ -58,6 +72,7 @@ body {
     display: none;
 }
 .table-of-element td {
+    transition: 0.5s;
     margin: 1px;
     text-wrap: wrap;
     display: flex;
@@ -81,7 +96,9 @@ body {
 }
 
 .table-of-element .atomic-details p {
+    margin-top: 20%;
     width: 50%;
+    font-size: 80%;
 }
 .table-of-element .symbol{
     display: flex;
@@ -116,10 +133,190 @@ body {
     flex-direction: row;
     height: 13vh;
     width: 5vw;
-    background-color: #0f1e29;
+    border-color: #0f1e29;
     border-style: solid;
-    border-color: orangered;
+    background-color: rgb(255, 108, 55);
     border-width: 2px;
     border-radius: 5px;
     justify-content: center;
+}
+
+.table-of-element .akali-metal:hover{
+    background-color: #0f1e29;
+    border-color:  rgb(255, 108, 55);
+}
+
+.table-of-element .alkaline-metal {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(175, 137, 246);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .alkaline-metal:hover{
+    border-color: rgb(175, 137, 246);
+    background-color: #0f1e29;
+}
+
+.table-of-element .transition-metal {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(91, 130, 246);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .transition-metal:hover{
+    border-color: rgb(91, 130, 246);
+    background-color: #0f1e29;
+}
+
+.table-of-element .post-transition-metal {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(0, 199, 99);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .post-transition-metal:hover{
+    border-color: rgb(0, 199, 99);
+    background-color: #0f1e29;
+}
+
+.table-of-element .metalloid {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(14, 167, 6);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .metalloid:hover{
+    border-color: rgb(14, 167, 6);
+    background-color: #0f1e29;
+}
+
+.table-of-element .non-metal {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    color: black;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(223, 238, 18);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .non-metal:hover{
+    border-color: rgb(171, 183, 15);
+    background-color: #0f1e29;
+    color: white;
+}
+
+.table-of-element .halogen {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    color: black;
+    background-color: rgb(255, 231, 47);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .halogen:hover{
+    border-color: rgb(197, 192, 55);
+    background-color: #0f1e29;
+    color: white;
+}
+
+.table-of-element .noble-gas {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(238, 151, 0);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .noble-gas:hover{
+    border-color: rgb(239, 168, 45);
+    background-color: #0f1e29;
+}
+
+.table-of-element .lanthanide {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(45, 181, 239);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .lanthanide:hover{
+    border-color: rgb(45, 181, 239);
+    background-color: #0f1e29;
+}
+
+.table-of-element .actinide {
+    text-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    height: 13vh;
+    width: 5vw;
+    border-color: #0f1e29;
+    border-style: solid;
+    background-color: rgb(42, 196, 139);
+    border-width: 2px;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.table-of-element .actinide:hover{
+    border-color: rgb(42, 196, 139);
+    background-color: #0f1e29;
 }
