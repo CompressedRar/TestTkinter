@@ -50,7 +50,15 @@
             
             <form action = "#" class = "signup-container__form" method = "post" >
                 <h1>Create account to use for signing in.</h1>
-                
+                {%block content%}
+                    {% with messages = get_flashed_messages(category_filter = "signin") %}
+                        {% if messages %}
+                            {% for msg in messages%}
+                                <p>{{msg}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                {%endblock%}
                 <input type = "text" name = "mode" hidden="true" value="signin">  
                 <input type = "text" name = "signup-username" placeholder="Username" required>
                 <input type = "password" id = "firstpass" name = "signup-password" placeholder="Password" required>
