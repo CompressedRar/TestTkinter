@@ -14,10 +14,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
+
 #views
     
 @app.before_request
 def create_tables():
+    
      db.create_all()
 
 @app.route("/")

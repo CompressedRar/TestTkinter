@@ -20,3 +20,17 @@ class Students(db.Model):
         return {
              "firstname": self.firstname,
              "password": self.password}
+    
+class Elements(db.Model):
+
+    atomicnum = db.Column(db.Integer, primary_key=True)
+    symbol =  db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
+    image = db.Column(db.String(100), nullable = False)
+
+    def __init__(self, atomicnum, symbol, name,imagename):
+        self.atomicnum = atomicnum
+        self.symbol = symbol
+        self.name = name
+        self.image = "{{url_for('static', filename='styles/"+ imagename+"')}}"
+        
