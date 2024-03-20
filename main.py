@@ -146,9 +146,8 @@ def create_tables():
 
 @app.route("/")
 def home():
-    all = Students.query.filter_by(firstname = "testuser")
-    
-    print()
+    print(Elements.query.filter_by(atomicnum=1).first())
+    print(all)
     #db.session.add(newacc)
     db.session.commit()
     
@@ -162,7 +161,7 @@ def login():
     #checks if user is already in session    
     #if not, authenticate
     if "currentuser" in session:
-                return redirect(url_for("lobby", user = "HEHE"))
+                return redirect(url_for("lobby", user = session["currentuser"]))
 
     if request.method == "POST":
         mode = request.form["mode"]

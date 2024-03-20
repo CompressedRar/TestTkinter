@@ -33,4 +33,12 @@ class Elements(db.Model):
         self.symbol = symbol
         self.name = name
         self.image = "{{url_for('static', filename='styles/"+ imagename+"')}}"
+    
+    def __repr__(self):
+        return {
+            "num": self.atomicnum,
+            "symbol": self.symbol,
+            "name": self.name,
+            "imagelink": self.image
+        }
         
