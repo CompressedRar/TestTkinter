@@ -10,12 +10,19 @@ class Students(db.Model):
     firstname = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(100), nullable=False)
     confirmpassword = db.Column(db.String(100), nullable=False)
+    mastery = db.Column(db.Integer, nullable=False)
+    ign = db.Column(db.String(100), nullable=False)
+    level = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, firstnm, password, confirmpass):
+    def __init__(self, firstnm, password, confirmpass,ign,mastery,level):
         
         self.firstname = firstnm
         self.password = password
         self.confirmpassword = confirmpass
+        self.ign = ign
+        self.level = level
+        self.mastery = mastery
+
     def __repr__(self):
         return {
              "firstname": self.firstname,

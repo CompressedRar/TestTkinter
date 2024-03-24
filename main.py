@@ -8,7 +8,7 @@ app.secret_key = "hehe"
 app.permanent_session_lifetime = timedelta(minutes=30)
 
 #models
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Users.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///AtomicOdyssey.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
@@ -146,8 +146,8 @@ def create_tables():
 
 @app.route("/")
 def home():
-    print(Elements.query.filter_by(atomicnum=1).first())
-    print(all)
+    #print(Elements.query.filter_by(atomicnum=1).first().__repr__()["num"])
+    #print(all)
     #db.session.add(newacc)
     db.session.commit()
     
@@ -192,15 +192,19 @@ def login():
             alluser = Students.query.filter_by(firstname = username).all()
 
             #check if user already exists
-            if alluser.count(0) > 0:
+            if len(alluser) > 0:
                 flash("Username already existed!!", "signin")
-                return render_template("login.html",model="false")             
+                return render_template("login.html",model="false") 
+                        
             password = request.form["signup-password"]
             confirmpassword = request.form["signup-confirmpassword"]
-            #ayusing sa javascript yung textchanged event
-            newuser = Students(username, password, confirmpassword)
+            ign = request.form["signup-ign"]
+            #create new account
+            
+            newuser = Students(username, password, confirmpassword, ign,0,0)
             db.session.add(newuser)
             db.session.commit()
+
             get_flashed_messages(category_filter="signin").clear()
 
             
@@ -217,6 +221,7 @@ def lobby(user):
 def logout():
 
     session.pop("currentuser", None)
+    get_flashed_messages().clear()
     return redirect(url_for("login", model = "false"))
 
 @app.route("/level")
