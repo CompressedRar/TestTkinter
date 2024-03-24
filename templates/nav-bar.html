@@ -9,24 +9,33 @@
         <title>{% block title %}{% endblock %}</title>        
     </head>
     <body>
-        <nav class= "navigation">
+        <nav class= "navigation" id = "nav-bar">
             
             <div class = "main-nav">
-                <img id = "profile-pic" src = "{{url_for('static', filename='styles/logo.png')}}">
-                <a>Home</a>
-                <a>Levels</a>
-                <a>Profile</a>
-                <a>Settings</a>
-                <a href="/logout">Logout</a>
+                <img id = "profile-pic" src = "{{url_for('static', filename='styles/logo.png')}}">                
             </div>
+            
+            
+            
             <div class = "profile-bar">
                 <div class="profile-image-container">
                     a
                 </div>
+                <span>Mastery: {%block mastery%} {%endblock%}</span>
+                <span>Level: {%block level%} {%endblock%}</span>
             </div>
+        </nav>
+        <nav class="floating-nav" id = "active-bar">
+            
+            <a onclick="active(this)">Home</a>
+            <a onclick="active(this)">Levels</a>
+            <a onclick="active(this)">Profile</a>
+            <a onclick="active(this)">Settings</a>
+            <a href="/logout">Logout</a>
         </nav>
         {% block content%}
 
         {% endblock %}
+        <script src = "{{url_for('static', filename = 'script/lobby.js')}}"></script>
     </body>
 </html>

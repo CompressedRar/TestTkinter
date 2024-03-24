@@ -34,10 +34,10 @@
                         {% endfor %}
                     {% endif%}
                 {% endwith%}
-                <form class = "login-container__form" method = "post">
+                <form class = "login-container__form" method = "post" >
                     <input type = "text" name = "mode" hidden="true" value = "login">
-                    <input type = "text" name = "login-username" placeholder="Username">
-                    <input type = "password" name = "login-password" placeholder="Password">
+                    <input type = "text" name = "login-username" placeholder="Username" required>
+                    <input type = "password" name = "login-password" placeholder="Password" required>
                     <input type="submit" value="Login">
                 </form>
                 <p>

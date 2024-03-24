@@ -153,15 +153,13 @@ def home():
     
     return render_template("index.html")
 
-@app.route("/createlevel")
-def create():
-    return render_template("submitlevel.html")
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     #checks if user is already in session    
     #if not, authenticate
     if "currentuser" in session:
-                return redirect(url_for("lobby", user = session["currentuser"]))
+                return redirect(url_for("lobby", user = session["currentuser"]["ign"]))
 
     if request.method == "POST":
         mode = request.form["mode"]
@@ -172,13 +170,22 @@ def login():
             username = request.form["login-username"]
             passwo = request.form["login-password"]
             
+
+
+
             authenticate = Students.query.filter_by(firstname = username, password = passwo).first()
             print(authenticate.firstname)
+
             if authenticate:
-                flash("Login successful", "info")
-                session["currentuser"] = authenticate.firstname
+                session["currentuser"] = {
+                     "ign": authenticate.ign,
+                     "mastery": authenticate.mastery,
+                     "level": authenticate.level
+                }
+                
                 print(authenticate.firstname)
                 #redirect  to lobby page
+
                 return redirect(url_for("lobby", user = authenticate.firstname))
             else: 
                 flash("The account doesn't exists!", "info")
@@ -214,7 +221,8 @@ def login():
 @app.route("/<user>")
 def lobby(user):
     if "currentuser" in session:
-        return render_template("lobby.html")     
+        if user == session["currentuser"]["ign"]:             
+            return render_template("lobby.html", mastery = session["currentuser"]["mastery"], level = session["currentuser"]["level"] )     
     return redirect(url_for("login"))
 
 @app.route("/logout")
