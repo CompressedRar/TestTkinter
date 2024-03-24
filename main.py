@@ -159,7 +159,7 @@ def login():
     #checks if user is already in session    
     #if not, authenticate
     if "currentuser" in session:
-                return redirect(url_for("lobby", user = session["currentuser"]["ign"]))
+        return redirect(url_for("lobby", user = session["currentuser"]["ign"]))
 
     if request.method == "POST":
         mode = request.form["mode"]
