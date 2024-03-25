@@ -53,6 +53,15 @@ carousel = document.getElementsByClassName("carousel")[0];
 leftbutton = document.getElementById("leftbutton");
 rightbutton = document.getElementById("rightbutton");
 
+function assign(elem, index){
+    
+    for (const x of elem.children){
+        x.children[0].textContent = "Level " + index;
+        console.log(x.children[0]);
+        console.log(x.children[1]);
+    }
+    
+}
 
 let lvl = document.getElementById("level");
 let scope = document.getElementById("scope");

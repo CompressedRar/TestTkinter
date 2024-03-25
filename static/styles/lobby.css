@@ -475,19 +475,28 @@ span::after {
     justify-content: space-evenly;
     width: 80%;
     height: 80%;
-    background-color: rebeccapurple;
 }
 .carousel .level {
+    transition-duration: 0.5s;
     width: 16%;
     height: 100%;
     background-color: red;
 }
 .carousel #lvl1 {
+    
     background-image: url("/static/Elements/23.Vanadium.png");
-    background-position: center;
+    background-position:0%;
 }
-
+@keyframes moveBg {
+    from{
+        background-position:0%;
+    }
+    to {
+        background-position: 100%;
+    }
+}
 .carousel .level .gradient {
+    transition-duration: 0.5s;
     display: flex;
     flex-direction: column;
     
@@ -497,3 +506,23 @@ span::after {
     width: 100%;
     background-color: rgba(12, 12, 12, 0.5);
 }
+.carousel .level:hover {
+    animation: moveBg 10s infinite ease-in;
+    box-shadow: 0px 0px 20px rgb(23,23,23);
+    transform: scale(1.1);
+}
+.carousel .level .gradient button {
+    transition: 0.5s;
+    font-size: 18px;
+    background-color: rgba(12, 12, 12, 0.5);
+    border-style: solid;
+    border-color: #1880ca;
+    border-width: 1px;
+    width: 80%;
+    height: 10%;
+    border-radius: 5px;
+}
+.carousel .level .gradient button:hover {
+    background-color: rgba(12, 12, 12, 0.9);
+    
+} 
