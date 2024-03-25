@@ -3,10 +3,9 @@ activebar = document.getElementById("active-bar");
 
 window.onscroll = () => {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        navigation.style.backgroundColor = "rgba(67,67,120,0.5)";
-        navigation.style.opacity = "0.5";
-        activebar.style.opacity = "0.5";
-        activebar.style.backgroundColor = "rgba(67,67,120,0.5)";
+        
+        navigation.style.opacity = "0.7";
+        activebar.style.opacity = "0.7";
       }
     else if (document.body.scrollTop < 350 || document.documentElement.scrollTop < 350){
         navigation.style.backgroundColor = "#0f1e29";

@@ -57,9 +57,6 @@ rightbutton = document.getElementById("rightbutton");
 let lvl = document.getElementById("level");
 let scope = document.getElementById("scope");
 
-carousel.style.backgroundImage = desc[carouselpointer]["bg"];
-lvl.textContent = "Level" + desc[carouselpointer]["level"];
-scope.textContent = desc[carouselpointer]["scope"];
 
 rightbutton.addEventListener("click", ()=>{
     if (carouselpointer < 11){

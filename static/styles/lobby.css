@@ -33,6 +33,9 @@ body {
     border-width: 2px;
     border-radius: 5px;
 }
+#active-bar:hover {
+    opacity: 1;
+}
 .floating-nav:hover {
     width: 10%;
     opacity: 1;
@@ -126,11 +129,16 @@ span::after {
 
     width: 100vw;
     height: 10vh;
+    box-shadow: 0px 10px 10px rgba(24, 128, 202,0.1);
+    background-image: linear-gradient(#0f1e29, rgba(24, 128, 202,0.1));
     background-color: #0f1e29;
     border-bottom-style: solid;
-    border-color: #024473;
+    border-color: rgb(24, 128, 202);
     border-width: 2px;
 
+}
+.navigation:hover {
+    box-shadow: 0px 10px 20px rgba(24, 128, 202,0.2);
 }
 .navigation .main-nav {
     width: 5%;
@@ -442,7 +450,7 @@ span::after {
 .carousel-container {
     margin-top: -5%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
@@ -462,34 +470,30 @@ span::after {
     font-size: 1.5rem;
 }
 
-.carousel-container .carousel {
+.carousel {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 70%;
+    justify-content: space-evenly;
+    width: 80%;
     height: 80%;
-    background-image: url("/static/Elements/35.Bromine.png");
-    background-size:100%;
+    background-color: rebeccapurple;
+}
+.carousel .level {
+    width: 16%;
+    height: 100%;
+    background-color: red;
+}
+.carousel #lvl1 {
+    background-image: url("/static/Elements/23.Vanadium.png");
     background-position: center;
-    background-repeat: no-repeat;
-    
-    border-radius: 10px;
 }
-.carousel-container .carousel .gradient {
-    width: 100%;
-    height: 0%;
-    color: transparent;
-}
-.carousel-container .carousel .level-content{
-    border-radius: 10px;
+
+.carousel .level .gradient {
     display: flex;
-    flex-direction: column-reverse;
-    height: 89%;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     width: 100%;
-    padding: 3%;
     background-color: rgba(12, 12, 12, 0.5);
-    /*background-image: linear-gradient(transparent, rgb(0, 0, 0));*/
-}
-.carousel-container button:hover{
-    background-color: rgba(12, 12, 12, 1);
 }
