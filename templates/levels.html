@@ -1,0 +1,31 @@
+{%extends "nav-bar.html"%}
+
+{%block content%}
+    <body style = "overflow-x: hidden;">
+        <div class="carousel-container">
+            <div id = "leftbutton">
+                <button>
+                    &#11164;
+                </button>
+            </div>
+            <div class = "carousel">
+                <div class="level-content">
+                    <div class="gradient">
+                        <p>Level 2</p>
+                    </div>
+                    <div class="level-description">
+                        <h1 id = "level">Level 1</h1>
+                        <p id = "scope">Hydrogen - Neon</p>
+                    </div>
+
+                </div>
+            </div>
+            <div id = "rightbutton">
+                <button>
+                    &#11166;
+                </button>
+            </div>
+        </div>  
+        <script src = "{{url_for('static', filename = 'script/levelcarousel.js')}}"></script>
+    </body>
+{% endblock %}

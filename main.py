@@ -158,6 +158,7 @@ def home():
 def login():
     #checks if user is already in session    
     #if not, authenticate
+    
     if "currentuser" in session:
         return redirect(url_for("lobby", user = session["currentuser"]["ign"]))
 
@@ -168,15 +169,13 @@ def login():
         # login or signin
         if mode == "login":
             username = request.form["login-username"]
-            passwo = request.form["login-password"]
-            
-
-
+            passwo = request.form["login-password"]            
 
             authenticate = Students.query.filter_by(firstname = username, password = passwo).first()
             print(authenticate.firstname)
 
             if authenticate:
+
                 session["currentuser"] = {
                      "ign": authenticate.ign,
                      "mastery": authenticate.mastery,
@@ -220,9 +219,19 @@ def login():
 
 @app.route("/<user>")
 def lobby(user):
+    
     if "currentuser" in session:
         if user == session["currentuser"]["ign"]:             
-            return render_template("lobby.html", mastery = session["currentuser"]["mastery"], level = session["currentuser"]["level"] )     
+            return render_template("lobby.html", mastery = session["currentuser"]["mastery"], level = session["currentuser"]["level"] )   
+        else:
+            return redirect(url_for("login"))  
+    else:        
+        return redirect(url_for("login"))
+
+@app.route("/levels")
+def levels():
+    if "currentuser" in session:             
+            return render_template("levels.html")     
     return redirect(url_for("login"))
 
 @app.route("/logout")
